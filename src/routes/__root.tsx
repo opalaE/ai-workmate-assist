@@ -78,10 +78,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "description", content: "Automate emails, meeting notes, task plans, and research with an AI workplace assistant." },
       { name: "author", content: "Lovable" },
       { property: "og:title", content: "Aria — AI Workplace Productivity Assistant" },
-      { property: "og:description", content: "Your AI co-pilot for daily knowledge work." },
+      { property: "og:description", content: "Automate emails, meeting notes, task plans, and research with an AI workplace assistant." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Aria — AI Workplace Productivity Assistant" },
+      { name: "twitter:description", content: "Automate emails, meeting notes, task plans, and research with an AI workplace assistant." },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/98250d26-f871-4080-9205-4c9e9b1033d5" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/98250d26-f871-4080-9205-4c9e9b1033d5" },
     ],
     links: [
       {
