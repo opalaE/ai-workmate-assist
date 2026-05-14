@@ -7,7 +7,6 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { ListChecks, Loader2, Sparkles } from "lucide-react";
 import { OutputCard, PageHeader } from "@/components/OutputCard";
 import { toast } from "sonner";
@@ -35,8 +34,9 @@ function Page() {
           <div className="space-y-1.5"><Label>Goals / brain dump</Label><Textarea value={goals} onChange={(e) => setGoals(e.target.value)} required minLength={5} maxLength={5000} rows={8} placeholder="List everything on your mind..." /></div>
           <div className="grid md:grid-cols-3 gap-4">
             <div className="space-y-1.5"><Label>Horizon</Label>
-              <Select value={horizon} onValueChange={setHorizon}><SelectTrigger><SelectValue /></SelectTrigger>
-                <SelectContent><SelectItem value="today">Today</SelectItem><SelectItem value="this_week">This week</SelectItem><SelectItem value="this_sprint">This sprint</SelectItem></SelectContent></Select>
+              <select value={horizon} onChange={(e) => setHorizon(e.target.value)} className="flex h-9 w-full rounded-md border border-input bg-card px-3 py-1 text-sm shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50">
+                <option value="today">Today</option><option value="this_week">This week</option><option value="this_sprint">This sprint</option>
+              </select>
             </div>
             <div className="space-y-1.5 md:col-span-2"><Label>Constraints (optional)</Label><Input value={constraints} onChange={(e) => setConstraints(e.target.value)} maxLength={2000} placeholder="e.g. 2hr meeting at 2pm, prefer mornings for deep work" /></div>
           </div>
