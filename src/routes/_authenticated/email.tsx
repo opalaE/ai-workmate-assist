@@ -7,7 +7,6 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Mail, Loader2, Sparkles } from "lucide-react";
 import { OutputCard, PageHeader } from "@/components/OutputCard";
 import { toast } from "sonner";
@@ -42,17 +41,17 @@ function EmailPage() {
           <div className="grid md:grid-cols-2 gap-4">
             <div className="space-y-1.5"><Label>Audience</Label><Input value={audience} onChange={(e) => setAudience(e.target.value)} required maxLength={200} placeholder="e.g. Senior client, internal team..." /></div>
             <div className="space-y-1.5"><Label>Tone</Label>
-              <Select value={tone} onValueChange={setTone}><SelectTrigger><SelectValue /></SelectTrigger>
-                <SelectContent>
-                  {["professional","friendly","persuasive","concise","apologetic","enthusiastic"].map(t => <SelectItem key={t} value={t} className="capitalize">{t}</SelectItem>)}
-                </SelectContent></Select>
+              <select value={tone} onChange={(e) => setTone(e.target.value)} className="flex h-9 w-full rounded-md border border-input bg-card px-3 py-1 text-sm shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50">
+                {["professional","friendly","persuasive","concise","apologetic","enthusiastic"].map(t => <option key={t} value={t}>{t}</option>)}
+              </select>
             </div>
           </div>
           <div className="space-y-1.5"><Label>Topic / purpose</Label><Textarea value={topic} onChange={(e) => setTopic(e.target.value)} required minLength={3} maxLength={2000} rows={3} placeholder="What is this email about?" /></div>
           <div className="grid md:grid-cols-3 gap-4">
             <div className="space-y-1.5 md:col-span-1"><Label>Length</Label>
-              <Select value={length} onValueChange={setLength}><SelectTrigger><SelectValue /></SelectTrigger>
-                <SelectContent><SelectItem value="short">Short</SelectItem><SelectItem value="medium">Medium</SelectItem><SelectItem value="long">Long</SelectItem></SelectContent></Select>
+              <select value={length} onChange={(e) => setLength(e.target.value)} className="flex h-9 w-full rounded-md border border-input bg-card px-3 py-1 text-sm shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50">
+                <option value="short">Short</option><option value="medium">Medium</option><option value="long">Long</option>
+              </select>
             </div>
             <div className="space-y-1.5 md:col-span-2"><Label>Additional context (optional)</Label><Input value={context} onChange={(e) => setContext(e.target.value)} maxLength={2000} placeholder="Background or constraints" /></div>
           </div>
