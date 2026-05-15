@@ -61,6 +61,3 @@ supabase/migrations  Database schema (chat_threads, chat_messages,
                      generated_outputs) with RLS policies
 ```
 
-## Disclaimer
-
-AI-generated content may require human review.
